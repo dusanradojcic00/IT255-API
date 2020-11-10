@@ -1,0 +1,12 @@
+<div class="py-3">
+    <h3>Search the country:</h3>
+    <input [(ngModel)]="searchText" placeholder="Search the country" class="form-control">
+</div>
+<div class="row mt-3">
+    <div *ngFor="let country of countries | countryfilter: searchText; index as i" class="col-lg-3 mb-3">
+        <div class="card h-100 p-2 text-center align-middle">
+            <h6 class="mb-2">{{country.name}}</h6>
+            <button (click)="seeDetails(i)" class="btn btn-primary btn-large">See details</button>
+        </div>
+    </div>
+</div>

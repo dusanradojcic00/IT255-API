@@ -1,0 +1,15 @@
+<div class="container mt-3">
+    <h1 *ngIf="!loaded">Loadin stats... Please wait</h1>
+    <div *ngIf="loaded">
+        <div *ngIf="available">
+            <h1>{{this.country.name}}</h1>
+            <p>Confirmed cases: {{this.country.confirmed}}</p>
+            <p>Total deaths: {{this.country.deaths}}</p>
+            <p>Current active cases: {{this.country.active}}</p>
+        </div>
+        <div *ngIf="!available">
+            <h1>Sorry, we don't have stats about this country's COVID 19 situation yet...</h1>
+            <a [routerLink]="['/stats']"><button class="btn btn-warning">RETURN</button></a>
+        </div>
+    </div>
+</div>
